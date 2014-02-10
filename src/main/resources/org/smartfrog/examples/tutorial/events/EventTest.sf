@@ -1,0 +1,21 @@
+#include "org/smartfrog/components.sf"
+#include "org/smartfrog/sfcore/workflow/components.sf"
+
+
+sfConfig extends EventCompound {
+
+  my1 extends EventPrim {
+    sfClass "org.smartfrog.examples.tutorial.events.EventElement" ;
+    sendTo my2 ;
+  }
+
+  my2 extends EventPrim {
+    sfClass "org.smartfrog.examples.tutorial.events.EventElement" ;
+    sendTo my3 ;
+  }
+
+  my3 extends EventPrim {
+    sfClass "org.smartfrog.examples.tutorial.events.EventElement" ;
+  }
+
+}

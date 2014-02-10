@@ -1,0 +1,27 @@
+#include "org/smartfrog/components.sf"
+#include "org/smartfrog/sfcore/workflow/components.sf"
+#include "org/smartfrog/examples/tutorial/sequence/MySequenceElement.sf"
+
+sfConfig extends Compound {
+
+  paralleltest extends Parallel {
+
+      //sfShouldDetatch false ;
+      //sfShouldTerminate true ;
+      //sfShouldTerminateQuietly false ;
+
+
+    A extends MySequenceElement {
+      sfShouldTerminate true ;
+    }
+
+    B extends MySequenceElement {
+      sfShouldTerminate true ;
+    }
+
+    C extends MySequenceElement {
+      sfShouldTerminate true ;
+    }
+  }
+}
+

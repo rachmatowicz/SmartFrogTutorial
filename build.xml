@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SmartFrog ant script" default="init" basedir=".">
+
+    <echo message="current project=${ant.project.name}"/>
+
+  <target name="init">
+    <echo message="init target executing..."/>
+  </target>
+
+</project>

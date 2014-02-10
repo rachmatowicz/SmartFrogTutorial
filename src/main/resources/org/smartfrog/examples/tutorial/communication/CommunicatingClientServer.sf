@@ -1,0 +1,26 @@
+// File CommunicatingClientServer.sf
+#include "org/smartfrog/components.sf"
+
+Client extends Prim {
+	// a client which communicates with Server
+	sfClass "org.smartfrog.examples.tutorial.communication.Client" ;
+	serverProxy TBD ;
+}
+
+Server extends Prim {
+	// a server which implements ServerInterface
+	sfClass "org.smartfrog.examples.tutorial.communication.Server" ;
+}
+
+sfConfig extends Compound {
+
+	myClient extends Client {
+	// attribute-value pairs defining the environment here
+	serverProxy LAZY ATTRIB myServer ;
+    }
+
+	myServer extends Server {
+	// attribute-value pairs defining the environment here
+    }
+
+}

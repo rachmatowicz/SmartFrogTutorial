@@ -1,0 +1,17 @@
+
+#include "org/smartfrog/components.sf"
+#include "../basic/MyPrim.sf"
+
+sfConfig extends Compound {
+
+  MyPrimTest1 extends MyPrim {
+    databaseDef "a ref to a DB1" ;
+  }
+  MyPrimTest2 extends MyPrim {
+    databaseDef "a ref to a DB2" ;
+  }
+  MyPrimTest3 extends MyPrim {
+    databaseDef "a ref to a DB3" ;
+  }
+
+}

@@ -1,0 +1,26 @@
+#include "org/smartfrog/components.sf"
+#include "org/smartfrog/sfcore/workflow/components.sf"
+#include "/org/smartfrog/services/filesystem/components.sf"
+#include "org/jboss/smartfrog/utils/components.sf"
+
+sfConfig extends Compound {
+
+  createDirAndCopyLogs extends Sequence {
+
+    // create the destination directory for the loog files
+    createDestDir extends Mkdir {
+      sfShouldTerminate true ;
+      dir "logDest" ;
+    }
+
+    // copy the files from source to dest
+    copyTheFiles extends CopyDir {
+      source "logSources" ;
+      destination "logDest" ;
+      copyOnDeploy true ;
+      ignoreHidden true ;
+      sfShouldTerminate true ;
+    }
+
+  } // end - createDirAndCopyLogs
+}

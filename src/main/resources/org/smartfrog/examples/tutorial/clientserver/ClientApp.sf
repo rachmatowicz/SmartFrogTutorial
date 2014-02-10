@@ -1,0 +1,7 @@
+#include "org/smartfrog/components.sf"
+#include "org/smartfrog/examples/tutorial/basic/MyPrim.sf"
+
+// this is a basic client component which spits out lifecycle info
+
+ClientApp extends MyPrim {
+}

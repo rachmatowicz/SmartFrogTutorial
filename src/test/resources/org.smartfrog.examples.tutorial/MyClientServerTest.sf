@@ -1,0 +1,23 @@
+#include "org/smartfrog/components.sf"
+#include "org/smartfrog/examples/tutorial/ClientApp.sf"
+#include "org/smartfrog/examples/tutorial/ServerApp.sf"
+
+// this is a basic client component which spits out lifecycle info
+
+sfConfig extends Compound {
+
+	// serverHost "localhost" ;
+	serverHost "10.16.8.135" ;
+	serverPort 4242 ;
+
+	MyClient extends ClientApp {
+		sfProcessHost "localhost" ;
+		server PARENT:serverHost ;
+		port PARENT:serverPort ;
+	}
+
+	MyServer extends ServerApp {
+		sfProcessHost PARENT:serverHost ;
+		port PARENT:serverPort ;
+	}
+}

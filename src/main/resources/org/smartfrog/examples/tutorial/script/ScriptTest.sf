@@ -1,0 +1,29 @@
+#include "org/smartfrog/components.sf"
+#include "org/smartfrog/functions.sf"
+#include "org/smartfrog/services/shellscript/components.sf"
+
+//
+// This component uses a bash shell to execute shell commands
+// Output from the commands appears on sysout
+//
+
+sfConfig extends Compound {
+
+  bashShell extends BashShell ;
+
+  command1 extends concat {
+    -- "echo \"Hello from " ;
+    -- " command 1\"" ;
+  }
+
+  command2 extends concat {
+    -- "pwd" ;
+  }
+
+  fire extends Script {
+    shell LAZY bashShell ;
+    deployScript [command1, command2] ;
+    autoTerminate true ;
+  }
+
+}

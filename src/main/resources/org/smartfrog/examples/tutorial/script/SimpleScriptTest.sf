@@ -1,0 +1,38 @@
+#include "org/smartfrog/components.sf"
+#include "org/smartfrog/functions.sf"
+#include "org/smartfrog/services/shellscript/components.sf"
+
+
+//
+// This component uses a shell script to echo a command to syspout
+//
+
+sfConfig extends Compound {
+
+  bashShell extends BashShell ;
+
+  // The string to echo
+  myString extends concat {
+    a "The meaning of life is " ;
+    b 42 ;
+    c extends concat {
+      a " by " ;
+      b "Douglas Adams" ;
+    }
+  }
+
+  // The echo command
+  myEchoString extends concat {
+    a "echo \""
+    b myString
+    c " \""
+  }
+
+  // The script used to echo
+  myScript extends Script {
+    shell LAZY bashShell ;
+    deployScript [myEchoString] ;
+    autoTerminate true ;
+  }
+
+}

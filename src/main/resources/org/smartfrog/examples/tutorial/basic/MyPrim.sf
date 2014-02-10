@@ -1,0 +1,11 @@
+#include "org/smartfrog/components.sf"
+
+// this is a basic component which may include default values
+// for its set of attributes
+
+MyPrim extends Prim {
+	sfClass "org.smartfrog.examples.tutorial.basic.MyPrim" ;
+	sfFred "inner value" ;
+}
+
+

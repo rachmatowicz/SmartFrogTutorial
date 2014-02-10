@@ -1,0 +1,6 @@
+#include "org/smartfrog/components.sf"
+
+MySequenceElement extends Prim {
+  sfClass "org.smartfrog.examples.tutorial.sequence.SequenceElement" ;
+}
+
